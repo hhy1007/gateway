@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://192.168.0.226/root/common-service-mgmt.git
+          username: guofeng
+          password: haishi0831_
+          
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.235:8761/eureka/,http://192.168.0.234:8761/eureka/
+  

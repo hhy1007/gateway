@@ -1,0 +1,7 @@
+com/eg/egsc/common/service/mgmt/gateway/dto/ZuulFilterResponseDto.class
+com/eg/egsc/common/service/mgmt/gateway/filter/AuthFilter.class
+com/eg/egsc/common/service/mgmt/gateway/filter/LogErrorRoutingFilter.class
+com/eg/egsc/common/service/mgmt/gateway/ZuulServerApplication.class
+com/eg/egsc/common/service/mgmt/gateway/filter/PermissionFilter.class
+com/eg/egsc/common/service/mgmt/gateway/filter/LogPostRoutingFilter.class
+com/eg/egsc/common/service/mgmt/gateway/filter/LogPreRoutingFilter.class

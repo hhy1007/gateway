@@ -1,0 +1,28 @@
+server:
+  port: 38761
+spring:
+  application:
+    name: discovery-server
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    register-with-eureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:38761/eureka
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 4000
+logging:
+  level:
+    root: INFO
+    org.springframework.security: INFO
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false

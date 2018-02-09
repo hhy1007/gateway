@@ -1,0 +1,7 @@
+/var/lib/jenkins/workspace/scp-gateway/gateway-server/src/main/java/com/eg/egsc/common/service/mgmt/gateway/filter/AuthFilter.java
+/var/lib/jenkins/workspace/scp-gateway/gateway-server/src/main/java/com/eg/egsc/common/service/mgmt/gateway/filter/LogPreRoutingFilter.java
+/var/lib/jenkins/workspace/scp-gateway/gateway-server/src/main/java/com/eg/egsc/common/service/mgmt/gateway/filter/LogErrorRoutingFilter.java
+/var/lib/jenkins/workspace/scp-gateway/gateway-server/src/main/java/com/eg/egsc/common/service/mgmt/gateway/filter/LogPostRoutingFilter.java
+/var/lib/jenkins/workspace/scp-gateway/gateway-server/src/main/java/com/eg/egsc/common/service/mgmt/gateway/ZuulServerApplication.java
+/var/lib/jenkins/workspace/scp-gateway/gateway-server/src/main/java/com/eg/egsc/common/service/mgmt/gateway/dto/ZuulFilterResponseDto.java
+/var/lib/jenkins/workspace/scp-gateway/gateway-server/src/main/java/com/eg/egsc/common/service/mgmt/gateway/filter/PermissionFilter.java

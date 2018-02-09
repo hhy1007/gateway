@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.eg.egsc</groupId>
+		<artifactId>service-admin</artifactId>
+		<version>0.3.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>gateway-server</artifactId>
+	<!-- <packaging>war</packaging> -->
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-netflix-eureka-server</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zuul</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.15</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.eg.egsc.framework</groupId>
+			<artifactId>framework-service</artifactId>
+			<version>1.1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.eg.egsc.component</groupId>
+			<artifactId>component-audit</artifactId>
+			<version>1.1.0-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
+
+	<!-- 打包插件，其中repackage、true是专门打spring boot专用包 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources/</directory>
+				<excludes>
+					<exclude>env/dev/*</exclude>
+					<exclude>env/scp-dev2/*</exclude>
+					<exclude>env/scp-dev3/*</exclude>
+					<exclude>env/scp-test/*</exclude>
+					<exclude>env/scp-test2/*</exclude>
+					<exclude>env/egc-dev2/*</exclude>
+					<exclude>env/egc-test/*</exclude>
+					<exclude>env/uat/*</exclude>
+					<exclude>env/prod/*</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources/env/${profiles.active}</directory>
+			</resource>
+		</resources>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<profiles.active>dev</profiles.active>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>scp-dev2</id>
+			<properties>
+				<profiles.active>scp-dev2</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>scp-dev3</id>
+			<properties>
+				<profiles.active>scp-dev3</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>scp-test</id>
+			<properties>
+				<profiles.active>scp-test</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>scp-test2</id>
+			<properties>
+				<profiles.active>scp-test2</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>egc-dev2</id>
+			<properties>
+				<profiles.active>egc-dev2</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>egc-test</id>
+			<properties>
+				<profiles.active>egc-test</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>uat</id>
+			<properties>
+				<profiles.active>uat</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<profiles.active>prod</profiles.active>
+			</properties>
+		</profile>
+	</profiles>
+</project>
